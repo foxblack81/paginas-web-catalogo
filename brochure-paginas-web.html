@@ -17,15 +17,16 @@
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     font-family: 'Georgia', 'Times New Roman', serif;
-    background: var(--negro);
+    background:var(--negro) url("musical-notes-bg.svg") center top / cover fixed;
     color: var(--plata);
     line-height:1.6;
   }
   .page{
     max-width: 900px;
     margin: 0 auto;
-    background: radial-gradient(circle at 50% 0%, #210008 0%, var(--negro) 34%);
+    background:radial-gradient(circle at 50% 0%, rgba(33,0,8,0.97) 0%, rgba(5,5,5,0.94) 34%);
     min-height:100vh;
+    box-shadow:0 0 90px rgba(0,0,0,0.9);
   }
   /* HERO */
   .hero{
@@ -36,6 +37,18 @@
     border-bottom: 1px solid var(--linea);
     position:relative;
     overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url("musical-notes-bg.svg") center / cover no-repeat;
+    opacity:0.08;
+    pointer-events:none;
+  }
+  .hero > *{
+    position:relative;
+    z-index:1;
   }
   .hero::after{
     content:"";
@@ -71,6 +84,11 @@
     max-width: 580px;
     margin: 0 auto;
     color: var(--plata);
+  }
+  .hero p.hero-extra{
+    margin-top:18px;
+    color:var(--plata-suave);
+    font-size:15px;
   }
   .firma{
     margin-top: 22px;
@@ -494,94 +512,95 @@
   <!-- HERO -->
   <section class="hero">
     <div class="eyebrow">Diseño web a medida · Madrid</div>
-    <h1>Soy Milena, y hago <span>páginas web</span></h1>
-    <p class="lead">Si tienes un negocio, un proyecto o una idea que quieres llevar al mundo digital, yo te ayudo a darle una buena cara en internet — clara, bonita y que funcione de verdad.</p>
-    <div class="firma">— Lenguaje a tu Medida —</div>
+    <h1>Hola, soy Milena, y diseño <span>páginas web que conectan con tus clientes</span></h1>
+    <p class="lead">Si tienes un negocio, un proyecto o una idea que deseas llevar al mundo digital, estoy aquí para ayudarte a darle vida con una presencia online profesional, atractiva y pensada para obtener resultados.</p>
+    <p class="lead hero-extra">Porque una buena página web no solo se ve bien: genera confianza, transmite quién eres y ayuda a que más personas descubran lo que haces.</p>
+    <div class="firma">— Un lenguaje cercano, soluciones a tu medida —</div>
   </section>
 
   <!-- INTRO -->
   <section class="intro">
-    <h2>"El que no enseña, no vende"</h2>
+    <h2>“Quien no muestra lo que hace, pierde oportunidades de crecer.”</h2>
     <p>
-      Hoy en día, si no estás en internet, es como si no existieras. Por eso he creado un sistema sencillo,
-      cercano y sin letra pequeña para que tengas tu propia página web — <span class="destacado">a tu medida, a tu ritmo y a tu bolsillo</span>.
-      Tú me cuentas tu idea, y yo la convierto en una web que enamore a tus clientes.
+      Hoy en día, tener presencia en internet ya no es una opción, sino una necesidad. Por eso he creado un servicio sencillo, transparente y totalmente adaptado a ti, para que puedas tener una página web profesional sin complicaciones ni costes inesperados.
+      <span class="destacado">Tú me cuentas tu idea y yo la transformo en una web que refleje la esencia de tu negocio y conecte con tus futuros clientes.</span>
     </p>
   </section>
 
   <!-- PROCESO -->
   <section class="proceso">
-    <h2>Así de fácil trabajo: mi método en 4 pasos</h2>
+    <h2>Así trabajo: mi método en 4 pasos</h2>
     <div class="pasos">
       <div class="paso">
         <div class="num">1</div>
-        <h3>Tomo tu idea</h3>
-        <p>Me cuentas qué quieres, cómo lo quieres y para qué lo necesitas. Aquí no hay preguntas tontas.</p>
+        <h3>Escucho tu idea</h3>
+        <p>Cuéntame qué necesitas, cuáles son tus objetivos y cómo imaginas tu proyecto. Cada detalle cuenta y aquí todas las preguntas son bienvenidas.</p>
       </div>
       <div class="paso">
         <div class="num">2</div>
-        <h3>Pre-diseño y charla</h3>
-        <p>Te enseño un primer boceto y lo comentamos juntos, como quien afina los últimos detalles de un buen plan.</p>
+        <h3>Diseñamos juntos</h3>
+        <p>Prepararé una propuesta inicial para que podamos revisarla y ajustarla hasta encontrar el enfoque perfecto para tu marca.</p>
       </div>
       <div class="paso">
         <div class="num">3</div>
-        <h3>Manos a la obra</h3>
-        <p>Me pongo las pilas: en 3 días a 1 semana tienes tu web lista, sin prisa pero sin pausa.</p>
+        <h3>Desarrollo tu página web</h3>
+        <p>Convierto el diseño en una página funcional, intuitiva y adaptada a todos los dispositivos. En aproximadamente 3 días a 1 semana, tu web estará lista.</p>
       </div>
       <div class="paso">
         <div class="num">4</div>
-        <h3>Ajustes a tu gusto</h3>
-        <p>Retoques finales para que quede como un guante. Tu opinión manda.</p>
+        <h3>Revisamos los últimos detalles</h3>
+        <p>Realizamos los ajustes finales necesarios para que el resultado sea exactamente lo que esperabas. Tu satisfacción es parte esencial del proceso.</p>
       </div>
     </div>
   </section>
 
   <!-- PRECIOS -->
   <section class="precios">
-    <h2>Elige el plan que te venga al pelo</h2>
-    <div class="sub">Precios claros, sin sorpresas ni "letra pequeña"</div>
+    <h2>Elige el plan que mejor se adapte a ti</h2>
+    <div class="sub">Precios claros y transparentes</div>
     <div class="planes">
 
       <div class="plan">
-        <h3>Básica</h3>
+        <h3>Plan Básico</h3>
         <div class="precio">299€</div>
-        <div class="periodo">1 año de servicio incluido</div>
+        <div class="periodo">Incluye 1 año de servicio</div>
         <ul>
           <li>Página web estática</li>
           <li>Diseño limpio y profesional</li>
-          <li>Ideal para darte a conocer</li>
-          <li>Información de contacto y servicios</li>
-          <li>Optimizada para móvil</li>
+          <li>Presentación de tus servicios</li>
+          <li>Información de contacto</li>
+          <li>Adaptada a dispositivos móviles</li>
+          <li>Ideal para comenzar tu presencia digital con una imagen cuidada</li>
         </ul>
-        <div class="regalo">Perfecta para empezar con buen pie</div>
+        <div class="regalo">Perfecta para emprendedores que están dando sus primeros pasos.</div>
       </div>
 
       <div class="plan destacado">
         <div class="badge">La más pedida</div>
-        <h3>Profesional</h3>
+        <h3>Plan Profesional</h3>
         <div class="precio">499€</div>
-        <div class="periodo">1 año de servicio incluido</div>
+        <div class="periodo">Incluye 1 año de servicio</div>
         <ul>
-          <li>Todo lo de la web Básica</li>
-          <li>Subpáginas (sobre mí, servicios, blog...)</li>
-          <li>Estructura pensada para crecer</li>
-          <li>Mejor posicionamiento en buscadores</li>
-          <li>Diseño a tu medida</li>
+          <li>Todo lo incluido en el Plan Básico</li>
+          <li>Subpáginas adicionales (sobre mí, servicios, blog, etc.)</li>
+          <li>Estructura preparada para el crecimiento de tu negocio</li>
+          <li>Optimización para mejorar la visibilidad en buscadores</li>
+          <li>Diseño personalizado según tu marca</li>
         </ul>
-        <div class="regalo">Para quien va en serio con su negocio</div>
+        <div class="regalo">Pensado para quienes desean consolidar su presencia online.</div>
       </div>
 
       <div class="plan">
-        <h3>Comercio Plus</h3>
+        <h3>Plan Comercio Plus</h3>
         <div class="precio">999€</div>
-        <div class="periodo">1 año de servicio incluido</div>
+        <div class="periodo">Incluye 1 año de servicio</div>
         <ul>
-          <li>Todo lo de la web Profesional</li>
-          <li>Diseño pensado para comercios</li>
-          <li>Catálogo / escaparate digital</li>
+          <li>Todo lo incluido en el Plan Profesional</li>
+          <li>Diseño orientado a comercios y empresas</li>
+          <li>Catálogo o escaparate digital de productos o servicios</li>
           <li>Soporte prioritario</li>
         </ul>
-        <div class="regalo">🎁 Regalo: Aplicación móvil de tu negocio</div>
+        <div class="regalo">🎁 Regalo exclusivo: Aplicación móvil personalizada para tu negocio.<br><br>La opción ideal para empresas que buscan ofrecer una experiencia más completa a sus clientes.</div>
       </div>
 
     </div>
@@ -589,18 +608,18 @@
 
   <!-- SOBRE MI -->
   <section class="sobre-mi">
-    <h2>¿Quién está al otro lado?</h2>
+    <h2>¿Quién está detrás de cada proyecto?</h2>
     <p>
-      Soy Milena, vivo en Madrid y me dedico a crear páginas web para personas como tú: emprendedores, autónomos
-      y pequeños negocios que quieren dar el salto al mundo digital sin perderse en tecnicismos. Hablo claro,
-      trabajo rápido y me involucro en cada proyecto como si fuera mío.
+      Soy Milena, vivo en Madrid y trabajo ayudando a emprendedores, autónomos y pequeños negocios a construir una presencia digital profesional y cercana.
+      <br><br>
+      Creo firmemente que detrás de cada negocio hay una historia que merece ser contada. Por eso me implico en cada proyecto como si fuera propio, ofreciendo un trato humano, comunicación clara y soluciones prácticas.
     </p>
   </section>
 
   <!-- FORMULARIO DE CONTACTO -->
   <section class="contacto">
     <h2>Cuéntame tu idea</h2>
-    <div class="sub">Rellena el formulario y te escribo directo por WhatsApp</div>
+    <div class="sub">Completa el formulario y me pondré en contacto contigo directamente a través de WhatsApp.</div>
     <form id="form-contacto" onsubmit="return enviarWhatsApp(event)">
       <label for="nombre">Tu nombre</label>
       <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" required>
@@ -610,26 +629,29 @@
 
       <label for="plan">Plan que te interesa</label>
       <select id="plan" name="plan">
-        <option value="Básica (299€)">Básica — 299€</option>
-        <option value="Profesional (499€)">Profesional — 499€</option>
-        <option value="Comercio Plus (999€)">Comercio Plus — 999€</option>
+        <option value="Plan Básico (299€)">Plan Básico — 299€</option>
+        <option value="Plan Profesional (499€)">Plan Profesional — 499€</option>
+        <option value="Plan Comercio Plus (999€)">Plan Comercio Plus — 999€</option>
         <option value="Aún no lo tengo claro">Aún no lo tengo claro</option>
       </select>
 
-      <label for="mensaje">Cuéntame un poco más</label>
+      <label for="mensaje">Cuéntame un poco más sobre tu proyecto</label>
       <textarea id="mensaje" name="mensaje" placeholder="Lo que necesites contarme sobre tu proyecto..."></textarea>
 
       <button type="submit">Enviar a WhatsApp</button>
     </form>
-    <div class="nota-form">Al enviar, se abrirá WhatsApp con tu mensaje listo para mandarme directamente al +34 674 724 485</div>
+    <div class="nota-form">Al enviar el formulario, se abrirá WhatsApp con tu mensaje listo para enviármelo directamente.<br>📱 +34 674 724 485</div>
   </section>
 
   <!-- CIERRE -->
   <section class="cierre">
-    <h2>No le des más vueltas</h2>
+    <h2>Es el momento de dar el siguiente paso</h2>
     <p>
-      Tener tu web ya no es un lujo, es lo mínimo para que te encuentren. Cuéntame tu idea y en menos de
-      una semana puede estar lista. Sin rodeos, sin tecnicismos raros — solo resultados.
+      Tu página web es la carta de presentación de tu negocio. Una inversión que trabaja por ti las 24 horas del día.
+      <br><br>
+      Si tienes una idea, un proyecto o simplemente quieres mejorar tu presencia digital, estaré encantada de ayudarte.
+      <br><br>
+      Hablemos hoy y hagamos que tu negocio destaque en internet.
     </p>
     <a class="cta-grande" href="https://wa.me/34674724485?text=Hola%20Milena%2C%20quiero%20informaci%C3%B3n%20sobre%20mi%20p%C3%A1gina%20web" target="_blank">
       📱 Escríbeme ahora · +34 674 724 485
