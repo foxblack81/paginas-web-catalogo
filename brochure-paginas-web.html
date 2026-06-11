@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milena — Páginas Web a tu Medida</title>
+<style>
+  :root{
+    --negro:#0a0a0a;
+    --negro-2:#161310;
+    --oro:#d4af37;
+    --oro-claro:#f3da7a;
+    --oro-suave:#a9892b;
+    --crema:#f6f1e3;
+    --linea: rgba(212,175,55,0.25);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--negro);
+    color: var(--crema);
+    line-height:1.6;
+  }
+  .page{
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--negro);
+  }
+  /* HERO */
+  .hero{
+    background: radial-gradient(circle at 50% 0%, #1c1812 0%, var(--negro) 70%);
+    color: var(--crema);
+    padding: 70px 50px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--linea);
+  }
+  .hero .eyebrow{
+    font-family: 'Trebuchet MS', sans-serif;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--oro);
+    margin-bottom: 14px;
+  }
+  .hero h1{
+    font-size: 42px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    color: var(--oro-claro);
+  }
+  .hero h1 span{
+    font-style: italic;
+    color: var(--oro);
+  }
+  .hero p.lead{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    max-width: 580px;
+    margin: 0 auto;
+    color: #d8d0bd;
+  }
+  .firma{
+    margin-top: 22px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 13px;
+    color: var(--oro-suave);
+    font-style: italic;
+  }
+
+  /* WHATSAPP FLOTANTE */
+  .whatsapp-fija{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--negro-2);
+    border-bottom: 1px solid var(--linea);
+    text-align:center;
+    padding: 10px;
+  }
+  .whatsapp-fija a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background: var(--oro);
+    color: var(--negro);
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight:bold;
+    text-decoration:none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  /* INTRO */
+  .intro{
+    padding: 50px 50px 30px;
+    text-align:center;
+  }
+  .intro h2{
+    font-size: 26px;
+    color: var(--oro-claro);
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .intro p{
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #d8d0bd;
+  }
+  .intro .destacado{
+    color: var(--oro);
+    font-weight: bold;
+  }
+
+  /* PROCESO */
+  .proceso{
+    padding: 30px 50px 50px;
+  }
+  .proceso h2{
+    text-align:center;
+    font-size: 24px;
+    color: var(--oro-claro);
+    margin-bottom: 36px;
+    font-style: italic;
+  }
+  .pasos{
+    display:flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .paso{
+    flex: 1 1 200px;
+    background: var(--negro-2);
+    border: 1px solid var(--linea);
+    border-top: 3px solid var(--oro);
+    border-radius: 6px;
+    padding: 24px 18px;
+    text-align:center;
+  }
+  .paso .num{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 32px;
+    font-weight:bold;
+    color: var(--oro);
+    margin-bottom: 8px;
+  }
+  .paso h3{
+    font-size: 16px;
+    color: var(--oro-claro);
+    margin-bottom: 8px;
+  }
+  .paso p{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 13px;
+    color: #cfc6b0;
+  }
+
+  /* PRECIOS */
+  .precios{
+    background: var(--negro-2);
+    padding: 50px;
+    border-top: 1px solid var(--linea);
+    border-bottom: 1px solid var(--linea);
+  }
+  .precios h2{
+    text-align:center;
+    color: var(--oro-claro);
+    font-size: 26px;
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  .precios .sub{
+    text-align:center;
+    color: var(--oro-suave);
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 13px;
+    margin-bottom: 36px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .planes{
+    display:flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+  .plan{
+    background: var(--negro);
+    border-radius: 8px;
+    flex: 1 1 240px;
+    max-width: 280px;
+    padding: 30px 24px;
+    text-align:center;
+    position:relative;
+    border: 1px solid var(--linea);
+  }
+  .plan.destacado{
+    background: linear-gradient(180deg, #1c1812 0%, var(--negro) 100%);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(212,175,55,0.18);
+    border: 1px solid var(--oro);
+  }
+  .plan .badge{
+    position:absolute;
+    top:-14px; left:50%;
+    transform: translateX(-50%);
+    background: var(--oro);
+    color: var(--negro);
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight:bold;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+  .plan h3{
+    font-size: 18px;
+    color: var(--oro-claro);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .plan .precio{
+    font-size: 40px;
+    color: var(--oro);
+    font-weight: bold;
+    margin: 14px 0 4px;
+  }
+  .plan .periodo{
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    color: #a59872;
+    margin-bottom: 18px;
+  }
+  .plan ul{
+    list-style:none;
+    text-align:left;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 13.5px;
+    color: #d8d0bd;
+  }
+  .plan ul li{
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--linea);
+    padding-left: 22px;
+    position: relative;
+  }
+  .plan ul li:last-child{ border-bottom:none; }
+  .plan ul li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color: var(--oro);
+    font-weight:bold;
+  }
+  .plan .regalo{
+    margin-top: 14px;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--oro);
+  }
+
+  /* SOBRE MI */
+  .sobre-mi{
+    padding: 50px;
+    text-align:center;
+  }
+  .sobre-mi h2{
+    font-size: 24px;
+    color: var(--oro-claro);
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .sobre-mi p{
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #d8d0bd;
+  }
+
+  /* FORMULARIO */
+  .contacto{
+    background: var(--negro-2);
+    padding: 50px;
+    border-top: 1px solid var(--linea);
+  }
+  .contacto h2{
+    text-align:center;
+    font-size: 24px;
+    color: var(--oro-claro);
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .contacto .sub{
+    text-align:center;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 13px;
+    color: #a59872;
+    margin-bottom: 30px;
+  }
+  form{
+    max-width: 480px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+  }
+  form label{
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    color: var(--oro);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: -8px;
+  }
+  form input, form select, form textarea{
+    background: var(--negro);
+    border: 1px solid var(--linea);
+    color: var(--crema);
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    outline: none;
+  }
+  form input:focus, form select:focus, form textarea:focus{
+    border-color: var(--oro);
+  }
+  form textarea{
+    resize: vertical;
+    min-height: 90px;
+  }
+  form button{
+    margin-top: 8px;
+    background: var(--oro);
+    color: var(--negro);
+    border: none;
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight:bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px;
+    border-radius: 30px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  form button:hover{
+    background: var(--oro-claro);
+  }
+  .nota-form{
+    text-align:center;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 11px;
+    color: #a59872;
+    margin-top: 16px;
+  }
+
+  /* CIERRE */
+  .cierre{
+    padding: 50px;
+    text-align:center;
+  }
+  .cierre h2{
+    font-size: 24px;
+    color: var(--oro-claro);
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .cierre p{
+    max-width: 560px;
+    margin: 0 auto 24px;
+    font-size: 15px;
+    color: #d8d0bd;
+  }
+  .cta-grande{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background: var(--oro);
+    color: var(--negro);
+    font-family:'Trebuchet MS', sans-serif;
+    font-weight:bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 40px;
+    border-radius: 30px;
+    text-decoration:none;
+    font-size: 15px;
+  }
+  footer{
+    background: var(--negro-2);
+    color: var(--oro-suave);
+    text-align:center;
+    padding: 24px;
+    font-family:'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-top: 1px solid var(--linea);
+  }
+
+  @media print{
+    .page{ max-width:100%; }
+    .whatsapp-fija{ display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- WHATSAPP FIJO -->
+  <div class="whatsapp-fija">
+    <a href="https://wa.me/34674724485?text=Hola%20Milena%2C%20quiero%20informaci%C3%B3n%20sobre%20mi%20p%C3%A1gina%20web" target="_blank">
+      📱 Escríbeme por WhatsApp · +34 674 724 485
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">Diseño web a medida · Madrid</div>
+    <h1>Soy Milena, y hago <span>páginas web</span></h1>
+    <p class="lead">Si tienes un negocio, un proyecto o una idea que quieres llevar al mundo digital, yo te ayudo a darle una buena cara en internet — clara, bonita y que funcione de verdad.</p>
+    <div class="firma">— Lenguaje a tu Medida —</div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <h2>"El que no enseña, no vende"</h2>
+    <p>
+      Hoy en día, si no estás en internet, es como si no existieras. Por eso he creado un sistema sencillo,
+      cercano y sin letra pequeña para que tengas tu propia página web — <span class="destacado">a tu medida, a tu ritmo y a tu bolsillo</span>.
+      Tú me cuentas tu idea, y yo la convierto en una web que enamore a tus clientes.
+    </p>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="proceso">
+    <h2>Así de fácil trabajo: mi método en 4 pasos</h2>
+    <div class="pasos">
+      <div class="paso">
+        <div class="num">1</div>
+        <h3>Tomo tu idea</h3>
+        <p>Me cuentas qué quieres, cómo lo quieres y para qué lo necesitas. Aquí no hay preguntas tontas.</p>
+      </div>
+      <div class="paso">
+        <div class="num">2</div>
+        <h3>Pre-diseño y charla</h3>
+        <p>Te enseño un primer boceto y lo comentamos juntos, como quien afina los últimos detalles de un buen plan.</p>
+      </div>
+      <div class="paso">
+        <div class="num">3</div>
+        <h3>Manos a la obra</h3>
+        <p>Me pongo las pilas: en 3 días a 1 semana tienes tu web lista, sin prisa pero sin pausa.</p>
+      </div>
+      <div class="paso">
+        <div class="num">4</div>
+        <h3>Ajustes a tu gusto</h3>
+        <p>Retoques finales para que quede como un guante. Tu opinión manda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="precios">
+    <h2>Elige el plan que te venga al pelo</h2>
+    <div class="sub">Precios claros, sin sorpresas ni "letra pequeña"</div>
+    <div class="planes">
+
+      <div class="plan">
+        <h3>Básica</h3>
+        <div class="precio">299€</div>
+        <div class="periodo">1 año de servicio incluido</div>
+        <ul>
+          <li>Página web estática</li>
+          <li>Diseño limpio y profesional</li>
+          <li>Ideal para darte a conocer</li>
+          <li>Información de contacto y servicios</li>
+          <li>Optimizada para móvil</li>
+        </ul>
+        <div class="regalo">Perfecta para empezar con buen pie</div>
+      </div>
+
+      <div class="plan destacado">
+        <div class="badge">La más pedida</div>
+        <h3>Profesional</h3>
+        <div class="precio">499€</div>
+        <div class="periodo">1 año de servicio incluido</div>
+        <ul>
+          <li>Todo lo de la web Básica</li>
+          <li>Subpáginas (sobre mí, servicios, blog...)</li>
+          <li>Estructura pensada para crecer</li>
+          <li>Mejor posicionamiento en buscadores</li>
+          <li>Diseño a tu medida</li>
+        </ul>
+        <div class="regalo">Para quien va en serio con su negocio</div>
+      </div>
+
+      <div class="plan">
+        <h3>Comercio Plus</h3>
+        <div class="precio">999€</div>
+        <div class="periodo">1 año de servicio incluido</div>
+        <ul>
+          <li>Todo lo de la web Profesional</li>
+          <li>Diseño pensado para comercios</li>
+          <li>Catálogo / escaparate digital</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <div class="regalo">🎁 Regalo: Aplicación móvil de tu negocio</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section class="sobre-mi">
+    <h2>¿Quién está al otro lado?</h2>
+    <p>
+      Soy Milena, vivo en Madrid y me dedico a crear páginas web para personas como tú: emprendedores, autónomos
+      y pequeños negocios que quieren dar el salto al mundo digital sin perderse en tecnicismos. Hablo claro,
+      trabajo rápido y me involucro en cada proyecto como si fuera mío.
+    </p>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <section class="contacto">
+    <h2>Cuéntame tu idea</h2>
+    <div class="sub">Rellena el formulario y te escribo directo por WhatsApp</div>
+    <form id="form-contacto" onsubmit="return enviarWhatsApp(event)">
+      <label for="nombre">Tu nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamas?" required>
+
+      <label for="negocio">Tu negocio o idea</label>
+      <input type="text" id="negocio" name="negocio" placeholder="Ej: tienda de ropa, academia, restaurante...">
+
+      <label for="plan">Plan que te interesa</label>
+      <select id="plan" name="plan">
+        <option value="Básica (299€)">Básica — 299€</option>
+        <option value="Profesional (499€)">Profesional — 499€</option>
+        <option value="Comercio Plus (999€)">Comercio Plus — 999€</option>
+        <option value="Aún no lo tengo claro">Aún no lo tengo claro</option>
+      </select>
+
+      <label for="mensaje">Cuéntame un poco más</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Lo que necesites contarme sobre tu proyecto..."></textarea>
+
+      <button type="submit">Enviar a WhatsApp</button>
+    </form>
+    <div class="nota-form">Al enviar, se abrirá WhatsApp con tu mensaje listo para mandarme directamente al +34 674 724 485</div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="cierre">
+    <h2>No le des más vueltas</h2>
+    <p>
+      Tener tu web ya no es un lujo, es lo mínimo para que te encuentren. Cuéntame tu idea y en menos de
+      una semana puede estar lista. Sin rodeos, sin tecnicismos raros — solo resultados.
+    </p>
+    <a class="cta-grande" href="https://wa.me/34674724485?text=Hola%20Milena%2C%20quiero%20informaci%C3%B3n%20sobre%20mi%20p%C3%A1gina%20web" target="_blank">
+      📱 Escríbeme ahora · +34 674 724 485
+    </a>
+  </section>
+
+  <footer>
+    Milena · Lenguaje a tu Medida · Madrid, España · Tu web, a tu medida
+  </footer>
+
+</div>
+
+<script>
+function enviarWhatsApp(event){
+  event.preventDefault();
+  const nombre = document.getElementById('nombre').value;
+  const negocio = document.getElementById('negocio').value;
+  const plan = document.getElementById('plan').value;
+  const mensaje = document.getElementById('mensaje').value;
+
+  let texto = "Hola Milena, soy " + nombre + ".";
+  if(negocio) texto += " Tengo un negocio/idea de: " + negocio + ".";
+  texto += " Me interesa el plan: " + plan + ".";
+  if(mensaje) texto += " " + mensaje;
+
+  const url = "https://wa.me/34674724485?text=" + encodeURIComponent(texto);
+  window.open(url, "_blank");
+  return false;
+}
+</script>
+
+</body>
+</html>
